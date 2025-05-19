@@ -9,7 +9,7 @@ type drivingSignal = {
     z: number
 }
 
-let serialNumber = 908640693;
+let serialNumber = 1966730559;
 
 let recievedPackage: string
 let drivingPackage: drivingSignal = { x: 0, y: 0, z: 0 }
