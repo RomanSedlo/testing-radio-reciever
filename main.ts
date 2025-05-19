@@ -3,7 +3,6 @@ radio.setTransmitPower(7)
 radio.setFrequencyBand(39)
 
 type drivingSignal = {
-    k: number;
     x: number;
     y: number;
     z: number
