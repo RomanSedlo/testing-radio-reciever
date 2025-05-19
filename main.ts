@@ -17,6 +17,7 @@ let newDrivingPackage: drivingSignal
 
 
 radio.onReceivedString(function (drivingPackage: string) {
+    basic.showString(".")
     if (serialNumber === radio.receivedPacket(RadioPacketProperty.SerialNumber)) {
         newDrivingPackage = JSON.parse(drivingPackage) as drivingSignal
         //zde bude kód na ovládání autíčka
