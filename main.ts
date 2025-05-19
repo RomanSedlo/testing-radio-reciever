@@ -10,7 +10,7 @@ type drivingSignal = {
     z: number
 }
 
-let serialNumber = 1234;
+let serialNumber = 908640693;
 let keySqequence: Array<number> = [4, 8, 6, 1, 5, 3, 4, 7, 2, 6, 0, 3, 9, 4, 8, 2, 6, 3, 7, 5, 2, 1, 0, 6, 8, 3, 5, 9];
 
 let newDrivingPackage: drivingSignal
