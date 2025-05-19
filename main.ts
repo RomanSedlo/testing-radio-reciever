@@ -12,7 +12,7 @@ type drivingSignal = {
 let serialNumber = 908640693;
 
 let recievedPackage: string
-let drivingPackage: drivingSignal
+let drivingPackage: drivingSignal = { x: 0, y: 0, z: 0 }
 
 
 radio.onReceivedString(function (recievedPackage: string) {
