@@ -1,6 +1,7 @@
 radio.setGroup(12)
 radio.setTransmitPower(7)
 radio.setFrequencyBand(39)
+radio.setTransmitSerialNumber(true)
 
 type drivingSignal = {
     x: number;
@@ -8,14 +9,18 @@ type drivingSignal = {
     z: number
 }
 
-let serialNumber: number = 908640693;
+let serialNumber = 908640693;
 
-let newDrivingPackage: drivingSignal
+let recievedPackage: string
+let drivingPackage: drivingSignal
 
-radio.onReceivedString(function (drivingPackage: string) {
-    basic.showString(drivingPackage)
+
+radio.onReceivedString(function (recievedPackage: string) {
     if (radio.receivedPacket(RadioPacketProperty.SerialNumber) === serialNumber) {
-        newDrivingPackage = JSON.parse(drivingPackage) as drivingSignal
+        let hyperPackage = recievedPackage.split(",")
+        drivingPackage.x = parseInt(hyperPackage[0])
+        drivingPackage.y = parseInt(hyperPackage[1])
+        drivingPackage.z = parseInt(hyperPackage[2])
         basic.showString("W")
     }
 })
